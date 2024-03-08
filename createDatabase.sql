@@ -15,10 +15,10 @@ create database FrozenMeat;
 
 use FrozenMeat;
 
-create table usuario(
+create table usuario_fisico(
   id int primary key auto_increment,
-  criadoEm datetime not null default current_timestamp,
-  atualizadoEm datetime default current_timestamp on update current_timestamp,
+  criado_em datetime not null default current_timestamp,
+  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null unique,
   senha varchar(255) not null,
@@ -27,41 +27,35 @@ create table usuario(
   cpf char(11) not null unique
 );
 
-create table armazem(
+create table usuario_juridico(
   id int primary key auto_increment,
-  criadoEm datetime not null default current_timestamp,
-  atualizadoEm datetime default current_timestamp on update current_timestamp,
+  criado_em datetime not null default current_timestamp,
+  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
+  nome varchar(80) not null unique,
+  senha varchar(255) not null,
   email varchar(80) not null unique,
   telefone varchar(13) not null unique,
-  endereco varchar(80) not null unique
+  cnpj char(11) not null unique
 );
 
-create table historico_armazem(
+create table historico_frigorifico(
   id int primary key auto_increment,
-  criadoEm datetime not null default current_timestamp,
+  criado_em datetime not null default current_timestamp,
   id_armazem int not null,
-  temperatura int not null,
-  umidade int not null,
-  foreign key (id_armazem) references armazem(id)
+  temperatura double not null
 );
 
-create table loja(
+create table frigorifico(
   id int primary key auto_increment,
-  criadoEm datetime not null default current_timestamp,
-  atualizadoEm datetime default current_timestamp on update current_timestamp,
+  criado_em datetime not null default current_timestamp,
+  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
-  email varchar(80) not null unique,
+  nome varchar(80) not null,
+  email varchar(80) not null,
   telefone varchar(13) not null unique,
   endereco varchar(80) not null unique,
-  id_gerente int not null,
-  id_armazem int not null,
-  foreign key (id_gerente) references usuario(id),
-  foreign key (id_armazem) references armazem(id)
+  id_gerente int not null
 );
 
-/*
-Dúvidas:
-  É ideal colocar os campos "criadoEm", "atualizadoEm" e "existe" nas tabelas ?
-  Qual o ideal para foreign key: campo "gerente" na tabela "loja" ou campo "loja" na tabela "usuario" ?
-*/
+
