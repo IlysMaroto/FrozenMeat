@@ -18,44 +18,41 @@ use FrozenMeat;
 create table usuario_fisico(
   id int primary key auto_increment,
   criado_em datetime not null default current_timestamp,
-  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null unique,
   senha varchar(255) not null,
   email varchar(80) not null unique,
   telefone varchar(13) not null unique,
-  cpf char(11) not null unique
+  cpf char(11) not null unique,
+  id_frigorifico int not null
 );
 
 create table usuario_juridico(
   id int primary key auto_increment,
   criado_em datetime not null default current_timestamp,
-  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null unique,
   senha varchar(255) not null,
   email varchar(80) not null unique,
   telefone varchar(13) not null unique,
-  cnpj char(11) not null unique
-);
-
-create table historico_frigorifico(
-  id int primary key auto_increment,
-  criado_em datetime not null default current_timestamp,
-  id_armazem int not null,
-  temperatura double not null
+  cnpj char(11) not null unique,
+  id_frigorifico int not null
 );
 
 create table frigorifico(
   id int primary key auto_increment,
   criado_em datetime not null default current_timestamp,
-  atualizado_em datetime default current_timestamp on update current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null,
   email varchar(80) not null,
   telefone varchar(13) not null unique,
   endereco varchar(80) not null unique,
-  id_gerente int not null
+  temperatura_ideal double not null default -18
 );
 
-
+create table historico_frigorifico(
+  id int primary key auto_increment,
+  criado_em datetime not null default current_timestamp,
+  id_frigorifico int not null,
+  temperatura double not null
+);
