@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulador financeiro - FrozenMeat</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <div class="container text">
+                <div class="content">
+                    <h1><u>Simulador Financeiro</u></h1>
+                    <h3>
+                        Esta calculadora contém os 10 produtos com maior índice de perdas no setor de carnes mensalmente. Dos produtos a seguir, insira a quantidade (em kg) de quanto a empresa armazena.<br> <i>Caso não forneça o produto, deixar em branco.</i>
+                    </h3>
+                    -------------------------------------------------------------------------------------------------------------------- <br> <br>
+                    Linguiça toscana: <input type="text" id="input_linguica_toscana"> <br>
+                    <br>
+                    Pernil dianteiro: <input type="text" id="input_pernil_dianteiro"> <br>
+                    <br>
+                    Acém bovino:      <input type="text" id="input_acem_bovino"> <br>
+                    <br>
+                    Músculo bovino:   <input type="text" id="input_musculo_bovino"> <br>
+                    <br>
+                    Contrafilé:       <input type="text" id="input_contrafile"> <br>
+                    <br>
+                    Pernil traseiro:  <input type="text" id="input_pernil_traseiro"> <br>
+                    <br>
+                    Chã de dentro:    <input type="text" id="input_cha_de_dentro"> <br>
+                    <br>
+                    Lombo suíno:      <input type="text" id="input_lombo_suino"> <br>
+                    <br>
+                    Costelinha suína: <input type="text" id="input_costelinha_suina"> <br>
+                    <br>
+                    Maçã de peito:    <input type="text" id="input_maca_de_peito"> <br>
+                    <br>
+                    <button onclick="calcular()"><b>Calcular prejuízo</b></button> <br>
+                    <br>
+                    <div id="div_mensagem"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    function calcular() {
+        div_mensagem.innerHTML = "";
+        var linguica_toscana = Number(input_linguica_toscana.value);
+        var pernil_dianteiro = Number(input_pernil_dianteiro.value);
+        var acem_bovino = Number(input_acem_bovino.value);
+        var musculo_bovino = Number(input_musculo_bovino.value);
+        var contrafile = Number(input_contrafile.value);
+        var pernil_traseiro = Number(input_pernil_traseiro.value);
+        var cha_de_dentro = Number(input_cha_de_dentro.value);
+        var lombo_suino = Number(input_lombo_suino.value);
+        var costelinha_suina = Number(input_costelinha_suina.value);
+        var maca_de_peito = Number(input_maca_de_peito.value);
+
+        var desperdicio_lt = linguica_toscana * 0.0485;
+        var desperdicio_pd = pernil_dianteiro * 0.0820;
+        var desperdicio_ab = acem_bovino * 0.1022;
+        var desperdicio_mb = musculo_bovino * 0.1085;
+        var desperdicio_cf = contrafile * 0.1123;
+        var desperdicio_pt = pernil_traseiro * 0.1235;
+        var desperdicio_cd = cha_de_dentro * 0.1321;
+        var desperdicio_ls = lombo_suino * 0.1345;
+        var desperdicio_cs = costelinha_suina * 0.1478;
+        var desperdicio_mp = maca_de_peito * 0.1524;
+
+        var total_lt = desperdicio_lt * 24.25;
+        var total_pd = desperdicio_pd * 22.98;
+        var total_ab = desperdicio_ab * 24.98;
+        var total_mb = desperdicio_mb * 26.96;
+        var total_cf = desperdicio_cf * 42.98;
+        var total_pt = desperdicio_pt * 25.96;
+        var total_cd = desperdicio_cd * 39.96;
+        var total_ls = desperdicio_ls * 23.98;
+        var total_cs = desperdicio_cs * 35.98;
+        var total_mp = desperdicio_mp * 37.98;
+
+        var total_kg = linguica_toscana + pernil_dianteiro + acem_bovino + musculo_bovino + contrafile + pernil_traseiro + cha_de_dentro + lombo_suino + costelinha_suina + maca_de_peito;
+        var total_desperdicio = desperdicio_ab + desperdicio_cd + desperdicio_cf + desperdicio_cs + desperdicio_ls + desperdicio_lt + desperdicio_mb + desperdicio_mp + desperdicio_pd + desperdicio_pt;
+        var prejuizo_total = total_ab + total_cd + total_cf + total_cs + total_ls + total_lt + total_mb + total_mp + total_pd + total_pt;
+
+        if (linguica_toscana > 0) {
+            div_mensagem.innerHTML += `Com ${linguica_toscana}kg de Linguiça Toscana, a um preço de mercado de R$24.25 o kg e um desperdício médio de 4.85%, há um prejuízo de ${desperdicio_lt}kg, totalizando R$${total_lt}<br> <br>`;
+        }
+        if (pernil_dianteiro > 0) {
+            div_mensagem.innerHTML += `Com ${pernil_dianteiro}kg de Pernil Dianteiro, a um preço de mercado de R$22.98 o kg e um desperdício médio de 8.20%, há um prejuízo de ${desperdicio_pd}kg, totalizando R$${total_pd}<br> <br>`;
+        }
+        if (acem_bovino > 0) {
+            div_mensagem.innerHTML += `Com ${acem_bovino}kg de Acém Bovino, a um preço de mercado de R$24.98 o kg e um desperdício médio de 10.22%, há um prejuízo de ${desperdicio_ab}kg, totalizando R$${total_ab}<br> <br>`;
+        }
+        if (musculo_bovino > 0) {
+            div_mensagem.innerHTML += `Com ${musculo_bovino}kg de Músculo Bovino, a um preço de mercado de R$26.96 o kg e um desperdício médio de 10.85%, há um prejuízo de ${desperdicio_mb}kg, totalizando R$${total_mb}<br> <br>`;
+        }
+        if (contrafile > 0) {
+            div_mensagem.innerHTML += `Com ${contrafile}kg de Contrafilé, a um preço de mercado de R$42.98 o kg e um desperdício médio de 11.23%, há um prejuízo de ${desperdicio_cf}kg, totalizando R$${total_cf}<br> <br>`;
+        }
+        if (pernil_traseiro > 0) {
+            div_mensagem.innerHTML += `Com ${pernil_traseiro}kg de Pernil Traseiro, a um preço de mercado de R$25.96 o kg e um desperdício médio de 12.35%, há um prejuízo de ${desperdicio_pt}kg, totalizando R$${total_pt}<br> <br>`;
+        }
+        if (cha_de_dentro > 0) {
+            div_mensagem.innerHTML += `Com ${cha_de_dentro}kg de Chã de Dentro, a um preço de mercado de R$39.96 o kg e um desperdício médio de 13.21%, há um prejuízo de ${desperdicio_cd}kg, totalizando R$${total_cd}<br> <br>`;
+        }
+        if (lombo_suino > 0) {
+            div_mensagem.innerHTML += `Com ${lombo_suino}kg de Lombo Suíno, a um preço de mercado de R$23.98 o kg e um desperdício médio de 13.45%, há um prejuízo de ${desperdicio_ls}kg, totalizando R$${total_ls}<br> <br>`;
+        }
+        if (costelinha_suina > 0) {
+            div_mensagem.innerHTML += `Com ${costelinha_suina}kg de Costelinha Suína, a um preço de mercado de R$35.98 o kg e um desperdício médio de 14.78%, há um prejuízo de ${desperdicio_cs}kg, totalizando R$${total_cs}<br> <br>`;
+        }
+        if (maca_de_peito > 0) {
+            div_mensagem.innerHTML += `Com ${maca_de_peito}kg de Maçã de Peito, a um preço de mercado de R$37.98 o kg e um desperdício médio de 15.24%, há um prejuízo de ${desperdicio_mp}kg, totalizando R$${total_mp}<br> <br>`;
+        }
+
+        div_mensagem.innerHTML += `<h2>Portanto, a somatória dos valores totaliza: <br>
+                                   ${total_kg}kg de carne, com uma perda de ${total_desperdicio}kg, totalizando um prejuízo de R$${prejuizo_total}</h2>`;
+    }
+</script>

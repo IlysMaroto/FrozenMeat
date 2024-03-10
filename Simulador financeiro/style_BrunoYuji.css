@@ -1,0 +1,23 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.container {
+    width: 600px;
+    height: auto;
+    background-color: #c1bfbf;
+    margin: 4px;
+    border: 3px solid black;
+}
+
+.content {
+    margin: 10px;
+}
+
+.text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
