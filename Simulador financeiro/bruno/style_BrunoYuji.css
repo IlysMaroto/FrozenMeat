@@ -1,3 +1,7 @@
+.background {
+    background-color: #984447;
+}
+
 .box {
     display: flex;
     flex-direction: column;
@@ -8,7 +12,7 @@
 .container {
     width: 600px;
     height: auto;
-    background-color: #c1bfbf;
+    background-color: #9CFFFA;
     margin: 4px;
     border: 3px solid black;
 }
@@ -20,4 +24,5 @@
 .text {
     font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
+    color: black;
 }
