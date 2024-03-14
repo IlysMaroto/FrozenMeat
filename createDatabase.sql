@@ -6,7 +6,7 @@
     Ilys Gomes Maroto | RA: 04241067
     Juliana Freires Silva | RA: 04241064
     Lucas Sampaio de Lucena | RA: 04241023
-    Lucas Tetsuo Nagasse | RA: 04241066
+    Lucas Tetsuo Nagasse  | RA: 04241066
     Marcela Gonçalves Teixeira Oliveira | RA: 04241000
     Vitor Hideo Miyashiro Frutuoso | RA: 04241059
 */
