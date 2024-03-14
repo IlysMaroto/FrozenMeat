@@ -46,7 +46,7 @@ create table frigorifico(
   nome varchar(80) not null,
   email varchar(80) not null,
   telefone varchar(13) not null unique,
-  endereco varchar(80) not null unique,
+  cep char(9) not null unique,
   temperatura_ideal double not null default -18
 );
 
