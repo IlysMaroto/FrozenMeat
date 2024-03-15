@@ -17,31 +17,29 @@ use FrozenMeat;
 
 create table usuario_fisico(
   id int primary key auto_increment,
-  registrZado_em datetime not null default current_timestamp,
+  registrado_em datetime not null default current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null,
   senha varchar(255) not null,
   email varchar(80) not null unique,
   telefone varchar(13) not null unique,
-  cpf char(11) not null unique,
-  id_frigorifico int not null
+  cpf char(11) not null unique
 );
 
 create table usuario_juridico(
   id int primary key auto_increment,
-  registrZado_em datetime not null default current_timestamp,
+  registrado_em datetime not null default current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null,
   senha varchar(255) not null,
   email varchar(80) not null unique,
   telefone varchar(13) not null unique,
-  cnpj char(14) not null unique,
-  id_frigorifico int not null
+  cnpj char(14) not null unique
 );
 
 create table frigorifico(
   id int primary key auto_increment,
-  registrZado_em datetime not null default current_timestamp,
+  registrado_em datetime not null default current_timestamp,
   existe boolean not null default true,
   nome varchar(80) not null,
   email varchar(80) not null,
@@ -51,9 +49,23 @@ create table frigorifico(
   temperatura_ideal double not null default -18
 );
 
+create table usuario_fisico_frigorifico(
+  id int primary key auto_increment,
+  registrado_em datetime not null default current_timestamp,
+  id_usuario int not null,
+  id_frigorifico int not null
+);
+
+create table usuario_juridico_frigorifico(
+  id int primary key auto_increment,
+  registrado_em datetime not null default current_timestamp,
+  id_usuario int not null,
+  id_frigorifico int not null
+);
+
 create table historico_frigorifico(
   id int primary key auto_increment,
-  registrZado_em datetime not null default current_timestamp,
+  registrado_em datetime not null default current_timestamp,
   id_frigorifico int not null,
   temperatura double not null
 );
