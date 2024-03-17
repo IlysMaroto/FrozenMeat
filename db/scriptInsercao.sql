@@ -14,19 +14,19 @@
 
 use FrozenMeat;
 
-insert into usuario_fisico (nome, senha, email, telefone, cpf) values 
-  ('Fernando Brando Silva', 'inovacaoprojetos', 'fernandobrando@gmail.com', '82978653454', '50754563758'),
-  ('Julia Limão Pereira', 'projectinovation3', 'Julialimao@hotmail.com', '11985835674', '40730568745'),
-  ('Viviana Silveira', 'banquinhosedadinhos', 'Vivianasilveira@gmail.com', '27912341234', '12365434589'),
-  ('Marcela Gonçalves', 'programacao$poramor$', 'goncalvesmar@hotmail.com', '21968543485', '32123454334'),
-  ('Vitoria Milena', 'iamaprogrammer12', 'vitoriamilenar2@hotmail.com', '51923458545', '67865476576');
+insert into usuario_fisico (nome, email, cpf, telefone, senha) values 
+  ('Fernando Brando Silva', 'fernandobrando@gmail.com', '50754563758', '82978653454', 'inovacaoprojetos'),
+  ('Julia Limão Pereira', 'Julialimao@hotmail.com', '40730568745', '11985835674', 'projectinovation3'),
+  ('Viviana Silveira', 'Vivianasilveira@gmail.com', '12365434589', '27912341234', 'banquinhosedadinhos'),
+  ('Marcela Gonçalves', 'goncalvesmar@hotmail.com', '32123454334', '21968543485', 'programacao$poramor$'),
+  ('Vitoria Milena', 'vitoriamilenar2@hotmail.com', '67865476576', '51923458545', 'iamaprogrammer12');
 
 insert into usuario_juridico (nome, senha, email, telefone, cnpj) values
-  ('Carnes Congeladas', 'bistecasfrias4311', 'carnesgeladascontact@hotmail.com', '119878865434', '45675467865434'),
-  ('Pasture to Plate', '0pastureandplate0', 'contactuspastureplate@gmail.com', '61345439854', '23854295724509'),
-  ('Coração Vaqueiro', 'vaqueiroscomemcarne123', 'falecomvaqueiros@hotmail.com', '47987584576', '08546925759357'),
-  ('Anna Costelas', 'boiadeiranna123', 'chama.a.anna@gmail.com', '79456783469', '92458649265935'),
-  ('Tourinhos Gordos', 't0ur0sf0rtesepesados', 'tourosgordosonline@hotmail.com', '11946248532', '94614545862354');
+  ('Carnes Congeladas', 'carnesgeladascontact@hotmail.com', '45675467865434', '119878865434', 'bistecasfrias4311'),
+  ('Pasture to Plate', 'contactuspastureplate@gmail.com', '23854295724509', '61345439854', '0pastureandplate0'),
+  ('Coração Vaqueiro', 'falecomvaqueiros@hotmail.com', '08546925759357', '47987584576', 'vaqueiroscomemcarne123'),
+  ('Anna Costelas', 'chama.a.anna@gmail.com', '92458649265935', '79456783469', 'boiadeiranna123'),
+  ('Tourinhos Gordos', 'tourosgordosonline@hotmail.com', '94614545862354', '11946248532', 't0ur0sf0rtesepesados');
 
 insert into frigorifico (nome, email, telefone, endereco, cep, temperatura_ideal) values
   ("Swift - Alameda Lorena, 1884", "swiftresolve@swift.com.br", "08004002892", "Alameda Lorena, 1884 - Jardim Paulista, São Paulo - SP, 01424-006", "01424-006", -18),
@@ -36,6 +36,15 @@ insert into frigorifico (nome, email, telefone, endereco, cep, temperatura_ideal
   ("Swift - Av. Brigadeiro Luís Antônio, 2013", "swiftresolve@swift.com.br", "08004002892", "Av. Brigadeiro Luís Antônio, 2013 - Bela Vista, São Paulo - SP, 01317-001", "01317-001", -18);
 
 insert into usuario_fisico_frigorifico (id_usuario, id_frigorifico) values
+  (1, 1),
+  (1, 2),
+  (2, 1),
+  (3, 3),
+  (4, 4),
+  (4, 5),
+  (5, 5);
+
+insert into usuario_juridico_frigorifico (id_usuario, id_frigorifico) values
   (1, 1),
   (1, 2),
   (2, 1),
