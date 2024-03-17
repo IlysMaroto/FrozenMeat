@@ -21,7 +21,7 @@ insert into usuario_fisico (nome, email, cpf, telefone, senha) values
   ('Marcela Gonçalves', 'goncalvesmar@hotmail.com', '32123454334', '21968543485', 'programacao$poramor$'),
   ('Vitoria Milena', 'vitoriamilenar2@hotmail.com', '67865476576', '51923458545', 'iamaprogrammer12');
 
-insert into usuario_juridico (nome, senha, email, telefone, cnpj) values
+insert into usuario_juridico (nome, email, cnpj, telefone, senha) values
   ('Carnes Congeladas', 'carnesgeladascontact@hotmail.com', '45675467865434', '119878865434', 'bistecasfrias4311'),
   ('Pasture to Plate', 'contactuspastureplate@gmail.com', '23854295724509', '61345439854', '0pastureandplate0'),
   ('Coração Vaqueiro', 'falecomvaqueiros@hotmail.com', '08546925759357', '47987584576', 'vaqueiroscomemcarne123'),
