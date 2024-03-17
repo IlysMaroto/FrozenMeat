@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Frozen Meat </title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: rgb(116, 112, 112);">
+
+<body>
 
 
-  <div style="display: flex; flex-direction: row; justify-content: center;">
-  <div style="background-color: black; color: white; margin: 10px; padding: 15px; padding-top:5px ;display: flex; flex-direction: column; border-radius: 8px; border-style: solid; border-width: 2px; border-color: gray; width: 75%;">
+  <div class="caixa_externa_org">
+  <div class="caixa_externa_elementos">
 
-  <h1 style="display: flex; flex-direction: row; justify-content: center;">Calculadora Financeira <br></h1>
+  <h1>Calculadora Financeira <br></h1>
 
   <p> Com base em dados obtidos através de pesquisas entre funcionários e gerentes do setores de alimentação (dados disponíveis na
   tabela abaixo), foi elaborada está calculadora financeira, que contém os 10 produtos com mais desperdício em açougues.
-  Dos produtos a seguir, preencha (em quilos) quanto o açougue forneçe. *Caso não forneça o produto, deixar em branco: </p>
+  Dos produtos a seguir, preencha (em quilos) quanto o açougue forneçe: <br> <i>Caso não forneça o produto, deixar em branco. </i></p>
 
   <br>
 
   
   
-  <div id="div_inputs" style="display: flex; flex-direction: row; justify-content: space-around;"> 
-    <div id="div_1a5">
+  <div class="inpts_tabela"> 
+    <div class="div_1a5">
 
   Linguiça Toscana: <input type="text" id="input_LinguicaT">  <br> <br>
 
@@ -49,106 +51,135 @@
 
       
       <img src="https://i.imgur.com/9IZWa6I.png" alt="">
+      <br> <br>
+      <div id="div_mensagem_curta"></div>
   
   </div>
   </div>
 
-  <button onclick="calcular()" style="background-color: rgb(16, 233, 34); border-radius: 5px; font-weight: bold; margin-left: 40%; margin-right: 40%;">Calcular desperdício</button>  <br> <br>
+  <button onclick="calcular()" class="btn_desperdicio">Calcular desperdício</button>  <br> <br>
+
+  <div id="div_mensagem"></div>
 
 </div>
-
-  <!--  Com 10kg de Linguiça Toscana, a um preço de mercado de R$5 o kg e um desperdício médio de 5%, há um prejuízo de Xkg, totalizando R$Z
-    
-    Com 5kg de Pernil, a um preço de mercado de R$15 o kg e um desperdício médio de 10%, há um prejuízo de Xkg, totalizando R$Z
-
-    Portanto, a somatória dos valores totaliza:
-    15kg de carne, a um preço médio de 10 com um desperdício médio de 7.5% há um prejuízo de Xkg, totalizando R$z
-  -->
-
-
-
-<div id="div_mensagem"></div>
 
 </body>
 </html>
 
 
 <Script>
-    var Linguica = input_LinguicaT.value; //peso em Linguiça
-    var PernilDianteiro = input_PernilDianteiro.value; //peso em PernilD 
-    var Acem = input_Acem.value; // etc ...
-    var Musculo = input_Musculo.value;
-    var Contrafile = input_Contrafile.value;
-    var PernilTraseiro = input_PernilTraseiro.value;
-    var Cha = input_Cha.value;
-    var Lombo = input_Lombo.value;
-    var Costelinha = input_Costelinha.value;
-    var Maca = input_Maca.value;
+  // Declaração das variaveis utilizadas no projeto
+
+    var LinguicaPeso = input_LinguicaT.value; //peso em Linguiça
+    var PernilDianteiroPeso = input_PernilDianteiro.value; //peso em PernilD 
+    var AcemPeso = input_Acem.value; // etc ...
+    var MusculoPeso = input_Musculo.value;
+    var ContrafilePeso = input_Contrafile.value;
+    var PernilTraseiroPeso = input_PernilTraseiro.value;
+    var ChaPeso = input_Cha.value;
+    var LomboPeso = input_Lombo.value;
+    var CostelinhaPeso = input_Costelinha.value;
+    var MacaPeso = input_Maca.value;
 
   function calcular() {
+  //Atualizacao dos valores das variaveis + atribuicao da porcentagem de desperdicio
+    
+    //Linguica
      LinguicaPeso = input_LinguicaT.value;
      LinguicaPorc = LinguicaPeso * 0.0485; //peso em Linguiça * porcentagem de desperdicio
 
+     //Pernil Dianteiro
      PernilDianteiroPeso = input_PernilDianteiro.value;
      PernilDianteiroPorc = PernilDianteiroPeso * 0.0820;
 
+     //Acem
      AcemPeso = input_Acem.value;
      AcemPorc = AcemPeso * 0.1022;
 
+     //Musculo
      MusculoPeso = input_Musculo.value;
      MusculoPorc = MusculoPeso * 0.1085;
 
+     //Contra File
      ContrafilePeso = input_Contrafile.value;
      ContrafilePorc = ContrafilePeso * 0.1123;
 
+     //Pernil Dianteiro
      PernilTraseiroPeso = input_PernilTraseiro.value;
      PernilTraseiroPorc = PernilTraseiroPeso * 0.1235;
 
+     // Cha de Dentro
      ChaPeso = input_Cha.value;
      ChaPorc = ChaPeso * 0.1321;
 
+     //Lombo
      LomboPeso = input_Lombo.value;
      LomboPorc = LomboPeso * 0.1345;
 
+     //Costelinha
      CostelinhaPeso = input_Costelinha.value;
      CostelinhaPorc = CostelinhaPeso * 0.1478;
 
+     //Maca de Peito
      MacaPeso = input_Maca.value;
      MacaPorc = MacaPeso * 0.1524;
 
+     //Somatoria de todo o peso em carne desperdicado
      total = LinguicaPorc + PernilDianteiroPorc + AcemPorc + MusculoPorc + ContrafilePorc + PernilTraseiroPorc + ChaPorc + LomboPorc + CostelinhaPorc + MacaPorc;
 
+     //Atribuicao de valores aos pesos
      totalDin = (LinguicaPorc * 17) + (PernilDianteiroPorc * 12) + (AcemPorc * 24.98) + (MusculoPorc * 28) + (ContrafilePorc * 42.98) + (PernilTraseiroPorc * 28) + (ChaPorc * 17.39) + (LomboPorc * 23.98) + (CostelinhaPorc * 32.99) + (MacaPorc * 8.93);
 
 
-    var mensagem = `O total de kg em produtos alimentícios (no açougue) que seu estabelecimento desperdiça por mês é de: <br> <br>
+  //Criacao da resposta ao usuario
+    var mensagem = `O total de kg em produtos alimentícios (no açougue) que seu estabelecimento desperdiça por mês é de: <br> <br>`
 
-    Em ${LinguicaPeso}kg de Linguiça Toscana, a um valor de R$ 17 o kg, com uma taxa de desperdício igual a 4.85%, há um desperdício de ${LinguicaPorc}kg, ou R$ ${LinguicaPorc * 17} <br> <br>
+    if(LinguicaPeso > 0){
+    mensagem += `${LinguicaPeso}kg de Linguiça Toscana, a um valor de R$ 17 o kg, com uma taxa de desperdício igual a 4.85%, há um desperdício de ${LinguicaPorc}kg, ou R$ ${LinguicaPorc * 17} <br> <br>`
+    }
 
-    Em ${PernilDianteiroPeso}kg de Pernil Dianteiro, a um valor de R$ 12 o kg, com uma taxa de desperdício igual a 8.20%, há um desperdício de ${PernilDianteiroPorc}kg, ou R$ ${PernilDianteiroPorc * 12} <br> <br>
+    if(PernilDianteiroPeso > 0) {
+      mensagem += `Em ${PernilDianteiroPeso}kg de Pernil Dianteiro, a um valor de R$ 12 o kg, com uma taxa de desperdício igual a 8.20%, há um desperdício de ${PernilDianteiroPorc}kg, ou R$ ${PernilDianteiroPorc * 12} <br> <br>`
+    }
 
-    Em ${AcemPeso}kg de Acém Bovino, a um valor de R$ 24,98 o kg, com uma taxa de desperdício igual a 10.22%, há um desperdício de ${AcemPorc}kg, ou R$ ${AcemPorc * 24.98} <br> <br>
+    if(AcemPeso > 0){
+      mensagem += `${AcemPeso}kg de Acém Bovino, a um valor de R$ 24,98 o kg, com uma taxa de desperdício igual a 10.22%, há um desperdício de ${AcemPorc}kg, ou R$ ${AcemPorc * 24.98} <br> <br>`
+    }
 
-    Em ${MusculoPeso}kg de Músculo Bovino, a um valor de R$ 28 o kg, com uma taxa de desperdício igual a 10.85%, há um desperdício de ${MusculoPorc}kg, ou R$ ${MusculoPorc * 28} <br> <br>
+    if(MusculoPeso > 0){
+      mensagem += `${MusculoPeso}kg de Músculo Bovino, a um valor de R$ 28 o kg, com uma taxa de desperdício igual a 10.85%, há um desperdício de ${MusculoPorc}kg, ou R$ ${MusculoPorc * 28} <br> <br>`
+    }
 
-    Em ${ContrafilePeso}kg de Contrafilé, a um valor de R$ 42,98 o kg, com uma taxa de desperdício igual a 11.23%, há um desperdício de ${ContrafilePorc}kg, ou R$ ${ContrafilePorc * 42.98} <br> <br>
+    if(ContrafilePeso > 0){
+      mensagem += `${ContrafilePeso}kg de Contrafilé, a um valor de R$ 42,98 o kg, com uma taxa de desperdício igual a 11.23%, há um desperdício de ${ContrafilePorc}kg, ou R$ ${ContrafilePorc * 42.98} <br> <br>`
+    }
 
-    Em ${PernilTraseiroPeso}kg de Pernil Traseiro, a um valor de R$ 28 o kg, com uma taxa de desperdício igual a 12.35%, há um desperdício de ${PernilTraseiroPorc}kg, ou R$ ${PernilTraseiroPorc * 28} <br> <br>
+    if(PernilTraseiroPeso > 0){
+      mensagem += `${PernilTraseiroPeso}kg de Pernil Traseiro, a um valor de R$ 28 o kg, com uma taxa de desperdício igual a 12.35%, há um desperdício de ${PernilTraseiroPorc}kg, ou R$ ${PernilTraseiroPorc * 28} <br> <br>`
+    }
 
-    Em ${ChaPeso}kg de Chã de Dentro, a um valor de R$ 17,39 o kg, com uma taxa de desperdício igual a 13.21%, há um desperdício de ${ChaPorc}kg, ou R$ ${ChaPorc * 17.39} <br> <br>
+    if(ChaPeso > 0){
+      mensagem += `${ChaPeso}kg de Chã de Dentro, a um valor de R$ 17,39 o kg, com uma taxa de desperdício igual a 13.21%, há um desperdício de ${ChaPorc}kg, ou R$ ${ChaPorc * 17.39} <br> <br>`
+    }
 
-    Em ${LomboPeso}kg de Lombo Suíno, a um valor de R$ 23,98 o kg, com uma taxa de desperdício igual a 13.45%, há um desperdício de ${LomboPorc}kg, ou R$ ${LomboPorc * 23.98} <br> <br>
+    if(LomboPeso > 0){
+      mensagem += `${LomboPeso}kg de Lombo Suíno, a um valor de R$ 23,98 o kg, com uma taxa de desperdício igual a 13.45%, há um desperdício de ${LomboPorc}kg, ou R$ ${LomboPorc * 23.98} <br> <br>`
+    }
 
-    Em ${CostelinhaPeso}kg de Costelinha Suína, a um valor de R$ 32.99 o kg, com uma taxa de desperdício igual a 14.78%, há um desperdício de ${CostelinhaPorc}kg, ou R$ ${CostelinhaPorc * 32.99} <br> <br>
+    if(CostelinhaPeso > 0){
+      mensagem += `${CostelinhaPeso}kg de Costelinha Suína, a um valor de R$ 32.99 o kg, com uma taxa de desperdício igual a 14.78%, há um desperdício de ${CostelinhaPorc}kg, ou R$ ${CostelinhaPorc * 32.99} <br> <br>`
+    }
 
-    Em ${MacaPeso}kg de Maçã de Peito, a um valor de R$ 8,93 o kg, com uma taxa de desperdício igual a 15.24%, há um desperdício de ${MacaPorc}kg, ou R$ ${MacaPorc * 8.93} <br> <br>
-
+    if(MacaPeso){
+      mensagem += `${MacaPeso}kg de Maçã de Peito, a um valor de R$ 8,93 o kg, com uma taxa de desperdício igual a 15.24%, há um desperdício de ${MacaPorc}kg, ou R$ ${MacaPorc * 8.93} <br> <br>`
+    }
     
-    Somando um total de ${total}kg (${total * 1000} gramas), R$ ${totalDin}`;
+    mensagem += `Um total de ${total}kg (${total * 1000} gramas), R$${totalDin}`;
 
           
 
           div_mensagem.innerHTML = mensagem;
+          div_mensagem_curta.innerHTML = `TOTAL: <br><br>- ${total}kg <br>- ${total * 1000} gramas <br> - R$${totalDin}`
 
         }
       
