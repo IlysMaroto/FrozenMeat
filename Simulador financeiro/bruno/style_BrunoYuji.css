@@ -1,3 +1,7 @@
+.background {
+    background-color: #416778;
+}
+
 .box {
     display: flex;
     flex-direction: column;
@@ -6,7 +10,7 @@
 }
 
 .container {
-    width: 700px;
+    width: 750px;
     height: auto;
     background-color: #c9fffc;
     margin: 4px;
