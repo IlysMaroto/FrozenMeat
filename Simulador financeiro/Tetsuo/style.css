@@ -12,6 +12,7 @@ h1 {
 }
 
 .titulo {
+  font-family: monospace;
   font-size: 2.5rem;
 }
 .aviso {
@@ -19,7 +20,7 @@ h1 {
 }
 
 .principal {
-  border: 5px solid #f19c79;
+  border: 30px solid #7a5a6a;
   border-radius: 5px;
   background-color: #984447;
   width: 75%;
@@ -50,7 +51,7 @@ h1 {
 }
 .principal button {
   margin: 1rem;
-  border: 2px solid black;
+  border: 2px solid #9cfffa;
   border-radius: 0.2rem;
   background-color: #4a6d7c;
   color: #f5f0f6;
@@ -61,7 +62,7 @@ h1 {
 }
 
 .div_total_background {
-  border: 1px solid black;
+  border: 1px solid #9cfffa;
   border-radius: 0.2rem;
   background-color: #4a6d7c;
   color: #f5f0f6;
