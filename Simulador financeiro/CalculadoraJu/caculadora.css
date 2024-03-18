@@ -1,6 +1,6 @@
 body {
 
-    background-color: #984447;
+    background-color: orange;
 
     color: white;
 
@@ -21,6 +21,11 @@ body {
     /* Defina a largura máxima do conteúdo */
 
     text-align: center; /*Define o alinhamento do texto dentro do elemento como centralizado.*/
+}
+
+.container{
+    background-color: #984447;
+    margin: auto;
 }
 
 

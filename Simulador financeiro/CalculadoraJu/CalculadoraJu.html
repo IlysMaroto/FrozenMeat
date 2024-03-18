@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div class="container">
     <div class="texto">
         <h1 class="titulo">FROZEN MEAT</h1><br>
         <h3>Calcule o prejuízo financeiro causado pela perda de carne em seu açougue</h3>
@@ -40,6 +41,7 @@
 
         <div id="div_mensagem" class="mensagem"></div>
     </div>
+    </div>
 
     <script>
 
@@ -68,49 +70,49 @@
             var pcostelinha = (costelinha * (14.78 / 100) * 21.98)
             var ppeito = (peito * (15.24 / 100) * 25.99)
             var prejuizototal = plinguica + ppernild + pacem + pmusculo + pcontra + ppernilt + pcoxao + plombo + pcostelinha + ppeito
-
+            var ktotal = linguica + pernild + acem + musculo + contra + pernilt + coxao + lombo + costelinha + peito
             //testa se o campo é vazio, caso não seja a mensagem é exibida
 
-            div_mensagem.innerHTML += `Prejuizo total é de R$${prejuizototal}`
+            div_mensagem.innerHTML += `Prejuizo de ${ktotal} kilos de carne custa R$${prejuizototal}`
 
             if (linguica > 0) {
-                div_mensagem.innerHTML += `Prejuizo da linguiça tocana = R$${plinguica} <br>`
+                div_mensagem.innerHTML += `Prejuizo de ${linguica} kilo(s) de linguiça tocana = R$${plinguica} <br>`
             }
 
             if (pernild > 0) {
-                div_mensagem.innerHTML += `Prejuizo do pernil dianteiro = R$${ppernild}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${pernild} kilo(s) de pernil dianteiro = R$${ppernild}<br>`
             }
 
             if (acem > 0) {
-                div_mensagem.innerHTML += `Prejuizo do acém bovino = R$${pacem}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${acem} kilo(s) de acém bovino = R$${pacem}<br>`
             }
 
             if (musculo > 0) {
-                div_mensagem.innerHTML += `Prejuizo da músculo bovino = R$${pmusculo}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${musculo} kilo(s) de músculo bovino = R$${pmusculo}<br>`
             }
 
             if (contra > 0) {
-                div_mensagem.innerHTML += `Prejuizo da contrafilé = R$${pcontra}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${contra} kilo(s) de contrafilé = R$${pcontra}<br>`
             }
 
             if (pernilt > 0) {
-                div_mensagem.innerHTML += `Prejuizo do pernil traseiro = R$${ppernilt}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${pernilt} kilo(s) de pernil traseiro = R$${ppernilt}<br>`
             }
 
             if (coxao > 0) {
-                div_mensagem.innerHTML += `Prejuizo do coxão mole = R$${pcoxao}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${coxao} kilo(s) de coxão mole = R$${pcoxao}<br>`
             }
 
             if (lombo > 0) {
-                div_mensagem.innerHTML += `Prejuizo do lombo suíno = R$${plombo}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${lombo} kilo(s) de lombo suíno = R$${plombo}<br>`
             }
 
             if (costelinha > 0) {
-                div_mensagem.innerHTML += `Prejuizo da costelinha suína = R$${pcostelinha}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${costelinha} kilo(s) de costelinha suína = R$${pcostelinha}<br>`
             }
 
             if (peito > 0) {
-                div_mensagem.innerHTML += `Prejuizo do peito bovino = R$${ppeito}<br>`
+                div_mensagem.innerHTML += `Prejuizo de ${peito} kilo(s) de peito bovino = R$${ppeito}<br>`
             }
         }
 
