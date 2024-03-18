@@ -62,7 +62,7 @@
           <div class="tabela_total">
             <img src="https://i.imgur.com/9IZWa6I.png" alt="" />
             <div class="div_total_background">
-              <div id="divTotal">Total:</div>
+              <div id="divTotal">Total de desperdício:</div>
             </div>
           </div>
         </div>
@@ -107,39 +107,39 @@
     var total = linguicaPorc * 17 + pernilDianteiroPorc * 12 + acemPorc * 24.98 + musculoPorc * 28 + contrafilePorc * 42.98 + pernilTraseiroPorc * 28 + chaPorc * 17.39 + lomboPorc * 23.98 + costelinhaPorc * 32.99 + macaPorc * 8.93;
 
     // exibe o resultado:
-    divDetalhes.innerHTML = `<b>O total de quilogramas em produtos alimentícios (no açougue) que seu estabelecimento desperdiça por mês é de:</b><br /><br />`;
+    divDetalhes.innerHTML = `<p><b>O total de quilogramas em produtos alimentícios (no açougue) que seu estabelecimento desperdiça por mês é de:</b></p><ul>`;
 
     if (linguicaPeso > 0) {
-      divDetalhes.innerHTML += `${linguicaPeso}kg de Linguiça Toscana, a um valor de R$17,00 o kg, com uma taxa de desperdício igual a 4,85%, há um desperdício de ${linguicaPorc}kg, ou <b>R$${linguicaPorc * 17}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${linguicaPeso}kg de Linguiça Toscana, a um valor de R$17.00 o kg, com uma taxa de desperdício igual a 4.85%, há um desperdício de ${linguicaPorc}kg, ou <b>R$${linguicaPorc * 17}</b></span></li>`;
     }
     if (pernilDianteiroPeso > 0) {
-      divDetalhes.innerHTML += `Em ${pernilDianteiroPeso}kg de Pernil Dianteiro, a um valor de R$12,00 o kg, com uma taxa de desperdício igual a 8,20%, há um desperdício de ${pernilDianteiroPorc}kg, ou <b>R$${pernilDianteiroPorc * 12}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>Em ${pernilDianteiroPeso}kg de Pernil Dianteiro, a um valor de R$12.00 o kg, com uma taxa de desperdício igual a 8.20%, há um desperdício de ${pernilDianteiroPorc}kg, ou <b>R$${pernilDianteiroPorc * 12}</b></span></li>`;
     }
     if (acemPeso > 0) {
-      divDetalhes.innerHTML += `${acemPeso}kg de Acém Bovino, a um valor de R$24,98 o kg, com uma taxa de desperdício igual a 10,22%, há um desperdício de ${acemPorc}kg, ou <b>R$${acemPorc * 24.98}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${acemPeso}kg de Acém Bovino, a um valor de R$24.98 o kg, com uma taxa de desperdício igual a 10.22%, há um desperdício de ${acemPorc}kg, ou <b>R$${acemPorc * 24.98}</b></span></li>`;
     }
     if (musculoPeso > 0) {
-      divDetalhes.innerHTML += `${musculoPeso}kg de Músculo Bovino, a um valor de R$28,00 o kg, com uma taxa de desperdício igual a 10,85%, há um desperdício de ${musculoPorc}kg, ou <b>R$${musculoPorc * 28}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${musculoPeso}kg de Músculo Bovino, a um valor de R$28.00 o kg, com uma taxa de desperdício igual a 10.85%, há um desperdício de ${musculoPorc}kg, ou <b>R$${musculoPorc * 28}</b></span></li>`;
     }
     if (contrafilePeso > 0) {
-      divDetalhes.innerHTML += `${contrafilePeso}kg de Contrafilé, a um valor de R$42,98 o kg, com uma taxa de desperdício igual a 11,23%, há um desperdício de ${contrafilePorc}kg, ou <b>R$${contrafilePorc * 42.98}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${contrafilePeso}kg de Contrafilé, a um valor de R$42.98 o kg, com uma taxa de desperdício igual a 11.23%, há um desperdício de ${contrafilePorc}kg, ou <b>R$${contrafilePorc * 42.98}</b></span></li>`;
     }
     if (pernilTraseiroPeso > 0) {
-      divDetalhes.innerHTML += `${pernilTraseiroPeso}kg de Pernil Traseiro, a um valor de R$28,00 o kg, com uma taxa de desperdício igual a 12,35%, há um desperdício de ${pernilTraseiroPorc}kg, ou <b>R$${pernilTraseiroPorc * 28}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${pernilTraseiroPeso}kg de Pernil Traseiro, a um valor de R$28.00 o kg, com uma taxa de desperdício igual a 12.35%, há um desperdício de ${pernilTraseiroPorc}kg, ou <b>R$${pernilTraseiroPorc * 28}</b></span></li>`;
     }
     if (chaPeso > 0) {
-      divDetalhes.innerHTML += `${chaPeso}kg de Chã de Dentro, a um valor de R$17,39 o kg, com uma taxa de desperdício igual a 13,21%, há um desperdício de ${chaPorc}kg, ou <b>R$${chaPorc * 17.39}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${chaPeso}kg de Chã de Dentro, a um valor de R$17.39 o kg, com uma taxa de desperdício igual a 13.21%, há um desperdício de ${chaPorc}kg, ou <b>R$${chaPorc * 17.39}</b></span></li>`;
     }
     if (lomboPeso > 0) {
-      divDetalhes.innerHTML += `${lomboPeso}kg de Lombo Suíno, a um valor de R$23,98 o kg, com uma taxa de desperdício igual a 13,45%, há um desperdício de ${lomboPorc}kg, ou <b>R$${lomboPorc * 23.98}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${lomboPeso}kg de Lombo Suíno, a um valor de R$23.98 o kg, com uma taxa de desperdício igual a 13.45%, há um desperdício de ${lomboPorc}kg, ou <b>R$${lomboPorc * 23.98}</b></span></li>`;
     }
     if (costelinhaPeso > 0) {
-      divDetalhes.innerHTML += `${costelinhaPeso}kg de Costelinha Suína, a um valor de R$32,99 o kg, com uma taxa de desperdício igual a 14,78%, há um desperdício de ${costelinhaPorc}kg, ou <b>R$${costelinhaPorc * 32.99}</b><br />`;
+      divDetalhes.innerHTML += `<li><span>${costelinhaPeso}kg de Costelinha Suína, a um valor de R$32.99 o kg, com uma taxa de desperdício igual a 14.78%, há um desperdício de ${costelinhaPorc}kg, ou <b>R$${costelinhaPorc * 32.99}</b></span></li>`;
     }
-    if (macaPeso) {
-      divDetalhes.innerHTML += `${macaPeso}kg de Maçã de Peito, a um valor de R$8,93 o kg, com uma taxa de desperdício igual a 15,24%, há um desperdício de ${macaPorc}kg, ou <b>R$${macaPorc * 8.93}</b><br />`;
+    if (macaPeso > 0) {
+      divDetalhes.innerHTML += `<li><span>${macaPeso}kg de Maçã de Peito, a um valor de R$8.93 o kg, com uma taxa de desperdício igual a 15.24%, há um desperdício de ${macaPorc}kg, ou <b>R$${macaPorc * 8.93}</b></span></li>`;
     }
-    divDetalhes.innerHTML += `<br /><h3><b>Um total de ${totalPerdido}kg (${totalPerdido * 1000} gramas), R$${total}</b></h3>`;
-    divTotal.innerHTML = `TOTAL:<br>• ${totalPerdido}kg <br>• ${totalPerdido * 1000} gramas <br>• R$${total}`;
+    divDetalhes.innerHTML += `</ul><h3><b>Um total de ${totalPerdido}kg, R$${total}</b></h3>`;
+    divTotal.innerHTML = `Total de desperdício:<ul><li><span>${totalPerdido}kg de carne</span></li><li><span>R$${total}</span></li></ul>`;
   }
 </script>
