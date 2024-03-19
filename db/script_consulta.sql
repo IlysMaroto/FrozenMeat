@@ -74,7 +74,7 @@ registrado_em as 'Data de Registro',
 nome as 'Nome',
 email as 'Email',
 cnpj as 'CNPJ',
-telefone as 'Número de telefone',
+telefone as 'Número de telefone'
 from usuario_juridico order by nome;
 
 select 
