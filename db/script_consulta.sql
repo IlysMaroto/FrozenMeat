@@ -58,7 +58,7 @@ registrado_em as 'Data de registro',
 nome as 'Nome', 
 email as 'Email', 
 cpf as 'CPF', 
-telefone as 'Número de telefone',
+telefone as 'Número de telefone'
 from usuario_fisico order by registrado_em desc;
 
 select
