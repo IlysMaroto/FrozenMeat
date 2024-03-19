@@ -22,7 +22,8 @@ create table usuario_fisico(
   email varchar(80) not null unique,
   cpf char(11) not null unique,
   telefone varchar(13) not null unique,
-  senha varchar(255) not null
+  senha varchar(255) not null,
+  cargo varchar(80) not null
 );
 
 create table usuario_juridico(
@@ -32,18 +33,19 @@ create table usuario_juridico(
   email varchar(80) not null unique,
   cnpj char(14) not null unique,
   telefone varchar(13) not null unique,
-  senha varchar(255) not null
+  senha varchar(255) not null,
+  cargo varchar(80) not null
 );
 
 create table frigorifico(
   id int primary key auto_increment,
   registrado_em datetime not null default current_timestamp,
-  nome varchar(80) not null,
   email varchar(80) not null,
   telefone varchar(13) not null,
   endereco varchar(80) not null unique,
   cep char(9) not null unique,
-  temperatura_ideal double not null default -18
+  temperatura_ideal_minima double not null default 0,
+  temperatura_ideal_maxima double not null default 4
 );
 
 create table usuario_fisico_frigorifico(
