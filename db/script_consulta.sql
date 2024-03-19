@@ -58,14 +58,14 @@ registrado_em as 'Data de registro',
 nome as 'Nome', 
 email as 'Email', 
 cpf as 'CPF', 
-telefone as 'Numero de telefone',
-senha as 'Senha' from usuario_fisico order by registrado_em desc;
+telefone as 'Número de telefone',
+from usuario_fisico order by registrado_em desc;
 
 select
 registrado_em as 'Data de registro', 
 nome as 'Nome', 
 email as 'Email', 
-telefone as 'Numero de telefone'
+telefone as 'Número de telefone'
 from usuario_fisico
 	where telefone like '11%';
     
@@ -74,35 +74,28 @@ registrado_em as 'Data de Registro',
 nome as 'Nome',
 email as 'Email',
 cnpj as 'CNPJ',
-telefone as 'Numero de telefone',
-senha as 'Senha'
- from usuario_juridico order by nome;
+telefone as 'Número de telefone',
+from usuario_juridico order by nome;
 
 select 
 registrado_em as 'Data de Registro',
 nome as 'Nome',
 email as 'Email',
 cnpj as 'CNPJ',
-telefone as 'Numero de telefone'
- from usuario_juridico
+telefone as 'Número de telefone'
+from usuario_juridico
 	where email like '%gmail%' order by email;
     
 select 
 id as 'ID',
 registrado_em as 'Data de registro',
-email as 'Email',
-telefone as 'Número de telefone',
 endereco as 'Endereço',
 cep as 'CEP',
 temperatura_ideal as 'Temperatura ideal'
-from frigorifico order by temperatura_ideal desc;
+from frigorifico order by cep desc;
 
 
-select 
-email as 'Email', 
-telefone as 'Telefone',
-Registrado_em as 'Data de registro'
-from frigorifico
-	where registrado_em like '%17%' order by registrado_em;
+select * from historico_frigorifico
+order by temperatura;
     
     
