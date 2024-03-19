@@ -23,7 +23,7 @@ create table usuario_fisico(
   cpf char(11) not null unique,
   telefone varchar(13) not null unique,
   senha varchar(255) not null,
-  cargo varchar(80) not null
+  cargo varchar(80) not null constraint chkCargo check (cargo in ('gerente', 'funcionário'))
 );
 
 create table usuario_juridico(
