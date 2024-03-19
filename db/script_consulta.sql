@@ -90,7 +90,6 @@ telefone as 'Numero de telefone'
 select 
 id as 'ID',
 registrado_em as 'Data de registro',
-nome as 'Nome',
 email as 'Email',
 telefone as 'Número de telefone',
 endereco as 'Endereço',
@@ -100,7 +99,6 @@ from frigorifico order by temperatura_ideal desc;
 
 
 select 
-nome as 'Nome', 
 email as 'Email', 
 telefone as 'Telefone',
 Registrado_em as 'Data de registro'
