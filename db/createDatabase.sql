@@ -28,8 +28,6 @@ create table usuario_juridico(
 create table frigorifico(
   id int primary key auto_increment,
   registrado_em datetime not null default current_timestamp,
-  email varchar(80) not null,
-  telefone varchar(13) not null,
   endereco varchar(80) not null unique,
   cep char(9) not null unique,
   temperatura_ideal_minima double not null default 0,
