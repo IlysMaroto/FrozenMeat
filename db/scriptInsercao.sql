@@ -3,8 +3,8 @@
 use FrozenMeat;
 
 insert into usuario_fisico (nome, email, cpf, telefone, senha, cargo) values 
-  ('Fernando Brando Silva', 'fernandobrando@gmail.com', '50754563758', '82978653454', 'inovacaoprojetos', 'Funcionário'),
-  ('Julia Limão Pereira', 'Julialimao@hotmail.com', '40730568745', '11985835674', 'projectinovation3', 'Gerente'),
+  ('David Silva', 'davidsilva@gmail.com', '50754563758', '82978653454', 'inovacaoprojetos', 'Funcionário'),
+  ('Henrique Pereira', 'henriquepereira@hotmail.com', '40730568745', '11985835674', 'projectinovation3', 'Gerente'),
   ('Viviana Silveira', 'Vivianasilveira@gmail.com', '12365434589', '27912341234', 'banquinhosedadinhos', 'Funcionário'),
   ('Marcela Gonçalves', 'goncalvesmar@hotmail.com', '32123454334', '21968543485', 'programacao$poramor$', 'Funcionário'),
   ('Vitoria Milena', 'vitoriamilenar2@hotmail.com', '67865476576', '51923458545', 'iamaprogrammer12', 'Gerente');
@@ -16,12 +16,12 @@ insert into usuario_juridico (nome, email, cnpj, telefone, senha, cargo) values
   ('Anna Costelas', 'chama.a.anna@gmail.com', '92458649265935', '79456783469', 'boiadeiranna123', 'Gerente'),
   ('Tourinhos Gordos', 'tourosgordosonline@hotmail.com', '94614545862354', '11946248532', 't0ur0sf0rtesepesados', 'Gerente');
 
-insert into frigorifico (email, telefone, endereco, cep, temperatura_ideal) values
-  ("swiftresolve@swift.com.br", "08004002892", "Alameda Lorena, 1884 - Jardim Paulista, São Paulo - SP, 01424-006", "01424-006", -18),
-  ("swiftresolve@swift.com.br", "08004002892", "R. Oscar Freire, 470 - Cerqueira César, São Paulo - SP, 01426-000", "01426-000", -18),
-  ("swiftresolve@swift.com.br", "08004002892", "R. Pamplona, 1253 - Jardim Paulista, São Paulo - SP, 01405-200", "01405-200", -18),
-  ("swiftresolve@swift.com.br", "08004002892", "Alameda Ribeirão Preto, 580 - Bela Vista, São Paulo - SP, 01331-000", "01331-000", -18),
-  ("swiftresolve@swift.com.br", "08004002892", "Av. Brigadeiro Luís Antônio, 2013 - Bela Vista, São Paulo - SP, 01317-001", "01317-001", -18);
+insert into frigorifico (endereco, cep) values
+  ("Alameda Lorena, 1884 - Jardim Paulista, São Paulo - SP, 01424-006", "01424-006"),
+  ("R. Oscar Freire, 470 - Cerqueira César, São Paulo - SP, 01426-000", "01426-000"),
+  ("R. Pamplona, 1253 - Jardim Paulista, São Paulo - SP, 01405-200", "01405-200"),
+  ("Alameda Ribeirão Preto, 580 - Bela Vista, São Paulo - SP, 01331-000", "01331-000"),
+  ("Av. Brigadeiro Luís Antônio, 2013 - Bela Vista, São Paulo - SP, 01317-001", "01317-001");
 
 insert into usuario_fisico_frigorifico (id_usuario, id_frigorifico) values
   (1, 1),
