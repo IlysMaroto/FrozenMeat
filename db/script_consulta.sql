@@ -91,7 +91,8 @@ id as 'ID',
 registrado_em as 'Data de registro',
 endereco as 'Endereço',
 cep as 'CEP',
-temperatura_ideal as 'Temperatura ideal'
+temperatura_ideal_minima as 'Temperatura ideal mínima',
+temperatura_ideal_maxima as 'Temperatura ideal máxima'
 from frigorifico order by cep desc;
 
 
