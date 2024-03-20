@@ -67,6 +67,10 @@ h1 {
   font-weight: bold;
 }
 
+#divDetalhes li {
+  margin: 1rem;
+}
+
 .div_total_background {
   border: 1px solid #9cfffa;
   border-radius: 0.2rem;
@@ -78,4 +82,5 @@ h1 {
   margin: 0.5rem;
 }
 #divTotal ul {
+  margin: 20px;
 }
